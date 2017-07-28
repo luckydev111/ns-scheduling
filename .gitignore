@@ -7,4 +7,5 @@ hooks/
 
 platforms/
 
-app/*.js
+**/*.js
+**/*.js.map
