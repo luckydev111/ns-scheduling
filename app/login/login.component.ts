@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./login.component.html",
     styleUrls: ["./login-common.css"],
 })
-export class ItemsComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
     // This pattern makes use of Angular’s dependency injection implementation to inject an instance of the ItemService service into this class. 
     // Angular knows about this service because it is included in your app’s main NgModule, defined in app.module.ts.

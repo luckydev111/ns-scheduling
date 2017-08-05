@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-    selector: "ns-login",
+    selector: "ns-signup",
     moduleId: module.id,
-    templateUrl: "./login.component.html",
-    styleUrls: ["./login-common.css"],
+    templateUrl: "./signup.component.html",
+    styleUrls: ["./signup-common.css"],
 })
-export class ItemsComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
     // This pattern makes use of Angular’s dependency injection implementation to inject an instance of the ItemService service into this class. 
     // Angular knows about this service because it is included in your app’s main NgModule, defined in app.module.ts.
