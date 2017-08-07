@@ -1,11 +1,12 @@
-# node.js
-#
-node_modules/
 npm-debug.log
+.DS_Store
 
+*.js.map
+app/**/*.js
 hooks/
-
+lib/
+node_modules/
 platforms/
-
-**/*.js
-**/*.js.map
+tmp/
+typings/
+report/

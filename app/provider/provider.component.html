@@ -1,0 +1,41 @@
+<GridLayout	rows="60, *"
+	class="main-container">
+		<StackLayout row="0"
+			class="header">
+				<Label
+		      text="DAILY SCHEDULE"
+		      class="page-title"></Label>
+		</StackLayout>
+
+<!-- 	   <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onDateChanged($event)" 
+    	(dayChange)="onDayChanged($event)" (monthChange)="onMonthChanged($event)" (yearChange)="onYearChanged($event)" verticalAlignment="center"></DatePicker> -->
+<!-- 	<TabView #tabview [selectedIndex]="tabindex" class="tab-view" selectedColor="#4099FF">  
+	    <StackLayout align="top" *tabItem="{title: 'Home', iconSource:'res://home'}">
+	        <home-tab></home-tab>
+	    </StackLayout>
+	    <StackLayout *tabItem="{title: 'Explore', iconSource:'res://explore'}">
+	    	<Label class="border" borderWidth="5" borderColor="black" text="hey"></Label>
+	    </StackLayout>
+	    <StackLayout *tabItem="{title: 'Notifications', iconSource:'res://notifications'}">
+	    </StackLayout>
+	    <StackLayout *tabItem="{title: 'Messages', iconSource:'res://messages'}">
+	        <chat-tab></chat-tab>
+	    </StackLayout>
+	    <StackLayout *tabItem="{title: 'Me', iconSource:'res://me'}">
+	    </StackLayout>
+	</TabView> -->
+	<TabView #tabview row="1" [selectedIndex]="tabindex" class="tab-view" selectedColor="#4099FF">  
+	    <StackLayout align="top" *tabItem="{title: 'Daily Schedule'}">
+	    	<daily-schedule-tab></daily-schedule-tab>
+	    </StackLayout>
+	    <StackLayout *tabItem="{title: 'Daily Services'}">
+	    	<daily-services-tab></daily-services-tab>
+	    </StackLayout>
+	    <StackLayout *tabItem="{title: 'Available Time'}">
+	    	<daily-available-time-tab></daily-available-time-tab>
+	    </StackLayout>
+	    <StackLayout *tabItem="{title: 'Appointments'}">
+	    	<daily-appointments-tab></daily-appointments-tab>
+	    </StackLayout>
+	</TabView>
+</GridLayout>
