@@ -1,3 +1,35 @@
 <StackLayout
 	class="main-container">
+		<StackLayout
+			class="content-container">
+			<Label
+				text="Available Services"
+				class="content-title"></Label>
+			<ListView [items]="services" class="list-group">
+				<ng-template let-service="item" let-i="index" let-odd="odd" let-even="even">
+					<GridLayout class="list-group-item">
+						<Label [text]="service.title" class="list-text"></Label>
+					</GridLayout>
+				</ng-template>
+			</ListView>
+			<Label
+				text="Add Service"
+				class="content-title"></Label>
+<!-- 			<Label
+				text="Title"
+				class="content-subtitle"></Label> -->
+			<TextView
+				[(ngModel)]="addServiceTitle"
+				hint="Enter the title for new service"
+				returnKeyType="send"
+				(returnPress)="submit($event)"
+				class="input input-border">
+			</TextView>
+			<GridLayout
+				class="button">
+				<Label
+					text="Add Service"
+					class="button-text"></Label>
+			</GridLayout>
+		</StackLayout>
 </StackLayout>

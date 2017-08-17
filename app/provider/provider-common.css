@@ -1,7 +1,7 @@
 .main-container {
   background-image: url("res://bg_login");
   /*background-color: white;*/
-  opacity: 0.6;
+  opacity: 0.8;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,6 +14,12 @@
 
 .tab-view {
 	/*background-color: black;*/
+	font-size: 20
+	tab-text-color: blue;
+	selected-tab-text-color: red;
+	android-selected-tab-text-color: red;
+	tabs-background-color: red;
+	selected-color: green;
 }
 
 .page-title {
@@ -23,4 +29,8 @@
 	font-weight: bold;
 	margin-top: 20;
 	color: white;
+}
+
+.tab {
+	background-color: red;
 }

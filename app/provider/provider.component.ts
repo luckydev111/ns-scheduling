@@ -20,7 +20,8 @@ export class ProviderComponent implements OnInit {
   isAndroid;
   isShowingRecent = false;
   isLoading = false;
-
+  public activeTab: string = "Daily Schedule";
+  public tabindex: number = 3;
   constructor(private router: Router,
     // private store: ProviderService,
     private page: Page) {}
@@ -37,6 +38,25 @@ export class ProviderComponent implements OnInit {
       container.android.setFocusableInTouchMode(true);
       container.android.setFocusable(true);
       textField.android.clearFocus();
+    }
+  }
+
+  public tabIndexChanged(e: any) {
+    switch (e.newIndex) {
+      case 0:
+        this.activeTab = "Daily Schedule";
+        break;
+      case 1:
+        this.activeTab = "Daily Services";
+        break;
+      case 2:
+        this.activeTab = "Available Time";
+        break;
+      case 3:
+        this.activeTab = "Appointments";
+        break;
+      default:
+        break;
     }
   }
 

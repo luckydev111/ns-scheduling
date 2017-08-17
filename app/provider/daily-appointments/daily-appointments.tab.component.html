@@ -1,3 +1,24 @@
 <StackLayout
 	class="main-container">
+		<StackLayout
+			class="content-container">
+			<Label
+				text="Appointment List"
+				class="content-title"></Label>
+			<ListView [items]="appointments" class="list-group">
+				<ng-template let-appointment="item" let-i="index" let-odd="odd" let-even="even">
+					<GridLayout columns="*, 140, 20" class="list-group-item">
+						<Label col="0" [text]="appointment.time" class="list-text"></Label>
+						<Label col="1" [text]="appointment.title" class="list-text"></Label>
+						<Label col="2" text="V" class="list-text"></Label>
+					</GridLayout>
+				</ng-template>
+			</ListView>
+			<GridLayout
+				class="button">
+				<Label
+					text="Confirm Appointment"
+					class="button-text"></Label>
+			</GridLayout>
+		</StackLayout>
 </StackLayout>

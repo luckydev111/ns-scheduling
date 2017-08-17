@@ -2,9 +2,18 @@
 	class="main-container">
 		<StackLayout row="0"
 			class="header">
-				<Label
-		      text="DAILY SCHEDULE"
-		      class="page-title"></Label>
+				<Label *ngIf="activeTab == 'Daily Schedule'"
+			    text="DAILY SCHEDULE"
+			    class="page-title"></Label>
+				<Label *ngIf="activeTab == 'Daily Services'"
+			    text="DAILY SERVICES"
+			    class="page-title"></Label>
+				<Label *ngIf="activeTab == 'Available Time'"
+			    text="AVAILABLE TIME"
+			    class="page-title"></Label>
+				<Label *ngIf="activeTab == 'Appointments'"
+			    text="APPOINTMENTS"
+			    class="page-title"></Label>
 		</StackLayout>
 
 <!-- 	   <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onDateChanged($event)" 
@@ -24,7 +33,11 @@
 	    <StackLayout *tabItem="{title: 'Me', iconSource:'res://me'}">
 	    </StackLayout>
 	</TabView> -->
-	<TabView #tabview row="1" [selectedIndex]="tabindex" class="tab-view" selectedColor="#4099FF">  
+	<TabView #tabview row="1" 
+		[selectedIndex]="tabindex"
+		class="tab-view"
+		tabsBackgroundColor="red"
+		(selectedIndexChanged)="tabIndexChanged($event)">  
 	    <StackLayout align="top" *tabItem="{title: 'Daily Schedule'}">
 	    	<daily-schedule-tab></daily-schedule-tab>
 	    </StackLayout>

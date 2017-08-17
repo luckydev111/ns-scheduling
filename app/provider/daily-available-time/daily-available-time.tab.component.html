@@ -1,3 +1,44 @@
 <StackLayout
 	class="main-container">
+		<StackLayout
+			class="content-container">
+			<Label
+				text="NonAvailable Time Slots"
+				class="content-title"></Label>
+			<ListView [items]="timeSlots" class="list-group">
+				<ng-template let-timeslot="item" let-i="index" let-odd="odd" let-even="even">
+					<GridLayout columns="*, 10, *" class="list-group-item">
+						<Label col="0" [text]="timeslot.fromTime" class="list-text"></Label>
+						<Label col="1" text="-" class="list-text"></Label>
+						<Label col="2" [text]="timeslot.toTime" class="list-text"></Label>
+					</GridLayout>
+				</ng-template>
+			</ListView>
+			<Label
+				text="Add Nonavailabile Time Slots"
+				class="content-title"></Label>
+<!-- 			<Label
+				text="Title"
+				class="content-subtitle"></Label> -->
+			<TextView
+				[(ngModel)]="addScheduleTime"
+				hint="Enter the nonavailable start time"
+				returnKeyType="send"
+				(returnPress)="submit($event)"
+				[editable]="editState"
+				class="input input-border"
+				(tap)="setNonavailbleTime()">
+			</TextView>
+			<TimePicker
+				*ngIf="addTimeReady"
+				(loaded)="onPickerLoaded($event)"
+				verticalAlignment="center"
+				class="m-15 schedule-time-picker"></TimePicker>
+			<GridLayout
+				class="button">
+				<Label
+					text="Add Time Slot"
+					class="button-text"></Label>
+			</GridLayout>
+		</StackLayout>
 </StackLayout>
